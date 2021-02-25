@@ -1,0 +1,14 @@
+
+services:
+        - google:
+                url: "http://www.google.com"
+                first_admin_email: "bieganski.m@wp.pl"
+                second_admin_email: "bieganski.m@wp.pl"
+                frequency: 10
+                allowed_response_time: 1
+        - github:
+                url: "http://www.github.com:21314"
+                first_admin_email: "bieganski.m@wp.pl"
+                second_admin_email: "bieganski.m@wp.pl"
+                frequency: 10
+                allowed_response_time: 1
