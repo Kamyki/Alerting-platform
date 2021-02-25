@@ -14,6 +14,10 @@ def ERROR(x):
 
 DEBUG = True
 
+if DEBUG:
+    print("=== DEBUG variable set, output will be verbose...\n")
+
+
 LOG = lambda x : pprint(x) if DEBUG else True
 
 def read_yaml(filename):
@@ -112,17 +116,3 @@ def get_second_admin_email(
         services_collection_name=SERVICES_COLLECTION_NAME):
     return __get_admin_email(False, service, db, admins_collection_name, services_collection_name)
 
-
-
-
-# populate_services(read_yaml(SERVICES_YAML_PATH))
-# services = get_services()
-
-# populate_admins(read_yaml(ADMINS_YAML_PATH))
-# get_admins()
-
-# a1 = get_first_admin_email(services[0])
-# a2 = get_second_admin_email(services[0])
-
-# p(a1)
-# p(a2)

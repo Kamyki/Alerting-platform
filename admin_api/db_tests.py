@@ -1,6 +1,7 @@
 import unittest
-from mongo import *
 
+DEBUG = False # must be before including to surpress 
+from mongo import *
 
 class TestServicePopulate(unittest.TestCase):
     def test_populate_services(self):
