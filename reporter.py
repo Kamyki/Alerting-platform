@@ -40,7 +40,6 @@ def ERROR(x):
     exit(1)
 
 
-
 class Entry:
     timestamp = datetime.now()
 
@@ -74,7 +73,6 @@ def db_put_incident_entry(
     except:
         # TODO type of exception (timeout or wrong domain)
         ERROR(f"Database Service GET endpoint '{put_entry_endpoint}' unavailable!")
-
 
 
 FROM = "matinekbot@gmail.com"

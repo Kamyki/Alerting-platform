@@ -29,7 +29,15 @@ def ERROR(x):
     print(f"ERROR!: {x}")
     exit(1)
 
-response = requests.post(ENDPOINT, data={'url': URL, 'token': TOKEN})
+
+try:
+    response = requests.post(ENDPOINT, data={'url': URL, 'token': TOKEN})
+except (MissingSchema, InvalidSchema):
+    ERROR(f"Malformed Endpoint URL! {ENDPOINT} is malformed. Please add 'http(s)://' prefix to passed --url!")
+except:
+    # TODO type of exception (timeout or wrong domain)
+    ERROR(f"Error: Service POST '{ENDPOINT}' unavailable!")
+
 
 # True if no error, False otherwise
 def handle_response(response):

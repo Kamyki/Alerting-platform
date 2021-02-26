@@ -88,6 +88,15 @@ def get_services(
     LOG(services)
     return services
 
+def get_service(
+        url,
+        db=db,
+        services_collection_name=SERVICES_COLLECTION_NAME):
+    collection = db[services_collection_name]
+    service = collection.find_one({"url": url})
+    LOG(service)
+    return service
+
 
 # =========================== ADMINS
 def populate_admins(
@@ -269,11 +278,5 @@ def should_report_second_admin(
     allowed_response_time = datetime.timedelta(seconds=service['allowed_response_time'])
     import time
     return not incident['reported_second_admin'] and datetime.datetime.now() - incident['datetime'] >= allowed_response_time
-        
 
 
-populate_services(read_yaml(SERVICES_YAML_PATH))
-populate_incidents(read_yaml_incidents())
-
-URL = "http://www.google.com"
-put_incident(URL)

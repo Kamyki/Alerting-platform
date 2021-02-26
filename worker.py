@@ -5,18 +5,17 @@ import time
 import requests
 import argparse
 from requests.exceptions import MissingSchema, InvalidSchema
+from admin_api.mongo import *
 
 PING_FREQ_SEC = 1
 
 parser = argparse.ArgumentParser(description="I'm worker script")
 # 'frequency' param is not needed inside that script, because it's already scheduled in cyclic way.
 parser.add_argument('--url', help='URL to check', required=True)
-parser.add_argument('--alerting-window', help='Time of helath checking; When service does not respond longer than alerting-window seconds, then schedule reporting task.', required=True)
 
 args = parser.parse_args()
 
 URL = args.url
-WINDOW_SEC = int(args.alerting_window)
 
 # === enable debug mode
 DEBUG = True
@@ -27,7 +26,7 @@ def ERROR(x):
     print(f"ERROR!: {x}")
     exit(1)
 
-def MAIN_FUNC(url=URL, timeout=WINDOW_SEC):
+def MAIN_FUNC(url, timeout):
     while True:
         try:
             requests.get(url, timeout=1)
@@ -41,17 +40,29 @@ def MAIN_FUNC(url=URL, timeout=WINDOW_SEC):
             LOG(f"Service {url} unavailable, checking until --alerting-window={timeout} seconds passes..")
             time.sleep(PING_FREQ_SEC)
 
-    
+def schedule_reporter_job(url):
+    LOG("dummy Reporter Job scheduling..")
+    pass
+
 
 def report_incident(url):
-    LOG("dummy incident reporting..")
+    LOG("incident reporting..")
+    put_incident(url)
+    # after putting persistent entry let's schedule dkron job 
+    schedule_reporter_job(url)
 
 
 if __name__ == '__main__':
-    p = multiprocessing.Process(target=MAIN_FUNC)
+
+    service = get_service(URL)
+    if service is None:
+        ERROR(f"Unknown service! {URL} service not found in database")
+    WINDOW_SEC = service['alerting_window']
+
+    p = multiprocessing.Process(target=MAIN_FUNC, args=(URL, WINDOW_SEC))
     p.start()
 
-    # Wait for 2 seconds or until process finishes
+    # After `alerting_window` seconds check whether process finished successfully
     p.join(WINDOW_SEC)
 
     if p.is_alive():
