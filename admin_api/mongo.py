@@ -169,6 +169,19 @@ def get_incident(
     LOG(incident)
     return incident
 
+def __get_incident_token_admin(first, url):
+    entry = db[SERVICES_COLLECTION_NAME].find_one({"url": url})
+    admin_name = entry['first_admin'] if first else entry['second_admin']
+    entry = db[ADMINS_REACTION_COLLECTION_NAME].find_one({"url": url, "admin_name": admin_name, "deactivation_timestamp": None})
+    token = entry['token']
+    return token
+
+def get_incident_token_first_admin(url):
+    return __get_incident_token_admin(True, url)
+
+def get_incident_token_second_admin(url):
+    return __get_incident_token_admin(False, url)
+
 
 # call in case of service unreachable detected.
 def put_incident(
