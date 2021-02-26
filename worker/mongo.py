@@ -29,7 +29,13 @@ def read_yaml(filename):
         except yaml.YAMLError as exc:
             ERROR(exc)
 
-db_creds = read_yaml("/app/secret.yaml")
+import os
+SECRET_PATH = os.getenv("ALERTING_SECRET_PATH")
+
+if SECRET_PATH is None:
+    ERROR("ALERTING_SECRET_PATH env. variable not set! For docker please set it to '/app/secret.yaml', for host 'secret.yaml' or any other path you want")
+
+db_creds = read_yaml(SECRET_PATH)
 DB_USER = db_creds["db_user"]
 DB_PSWD = db_creds["db_password"]
 del db_creds
@@ -213,8 +219,7 @@ def put_incident(
         'reported_second_admin': False,
     }
 
-
-    # TODO that's crappy
+    # TODO that 'if below is crappy, better parse 'insert_res' somehow
     insert_res = incidents_col.replace_one({"url": url}, entry)
     if get_incident(url, db, incidents_collection_name) is None:
         # there were nothing to be replaced
