@@ -3,46 +3,20 @@
 import pymongo
 from pprint import pprint
 import datetime
+from utils import SECRET_CONFIG, read_yaml, LOG, ERROR
 
 pt = lambda x: print(type(x))
 pd = lambda x: pprint(dir(x))
 pdoc = lambda x: pprint(x.__doc__)
 p = lambda x: pprint(x)
 
-def ERROR(x):
-    print("==== " + str(x))
-    exit(1)
 
-DEBUG = False
-
-if DEBUG:
-    print("=== DEBUG variable set, output will be verbose...\n")
-
-
-LOG = lambda x : print("==== " + str(x)) if DEBUG else True
-
-def read_yaml(filename):
-    import yaml
-    with open(filename, 'r') as stream:
-        try:
-            return yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            ERROR(exc)
-
-import os
-SECRET_PATH = os.getenv("ALERTING_SECRET_PATH")
-
-if SECRET_PATH is None:
-    ERROR("ALERTING_SECRET_PATH env. variable not set! For docker please set it to '/app/secret.yaml', for host 'secret.yaml' or any other path you want")
-
-db_creds = read_yaml(SECRET_PATH)
-DB_USER = db_creds["db_user"]
-DB_PSWD = db_creds["db_password"]
-del db_creds
+DB_USER = SECRET_CONFIG["db_user"]
+DB_PSWD = SECRET_CONFIG["db_password"]
+DB_NAME = SECRET_CONFIG["db_name"]
 
 MONGO_CONNECTION_KEY=client = f"mongodb+srv://{DB_USER}:{DB_PSWD}@klaster.jbd28.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
-DB_NAME = "irio"
 SERVICES_COLLECTION_NAME = "services"
 ADMINS_COLLECTION_NAME = "admins"
 INCIDENTS_COLLECTION_NAME = "incidents"

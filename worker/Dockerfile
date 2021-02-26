@@ -21,6 +21,8 @@ RUN pip install -r requirements.txt
 
 COPY ./ /app
 
+ENV ALERTING_SECRET_PATH=/app/secret.yaml
+
 ENTRYPOINT ["dkron"]
 
 CMD ["--help"]

@@ -1,0 +1,42 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-server
+  labels:
+    app: admin-server
+spec:
+  publishNotReadyAddresses: true
+  ports:
+  - name: web
+    port: 80
+  selector:
+    app: admin-server
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    app: admin-server
+  name: admin-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: admin-server
+      component: worker
+  template:
+    metadata:
+      labels:
+        app: admin-server
+      name: admin-server
+    spec:
+      containers:
+        image: eu.gcr.io/kubernetes-labs-293308/admin-server
+        name: dkron
+        ports:
+        - containerPort: 8080
+          name: web
+          protocol: TCP
+      terminationGracePeriodSeconds: 3600 # Max wait time for jobs to be finished, then force kill the pod.

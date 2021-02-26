@@ -8,4 +8,6 @@ COPY ./requirements.txt /var/www/requirements.txt
 
 RUN pip install -r /var/www/requirements.txt
 
+ENV ALERTING_SECRET_PATH=/app/secret.yaml
+
 COPY . /app

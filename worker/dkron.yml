@@ -1,0 +1,3 @@
+ tags:
+      worker: crawler
+retry-join: ["provider=k8s label_selector=\"app=dkron-server\""]

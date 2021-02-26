@@ -20,7 +20,7 @@ if __name__ == "__main__":
     api = Dkron(hosts)
 
     services = get_services()
-    #print(list(services))
+    print("Start scheduling jobs")
     for service in services:
         api.apply_job({
             "schedule": f'@every { service["frequency"] }s',
@@ -37,4 +37,5 @@ if __name__ == "__main__":
                "forward": "true"
              }
            }
-    })
+        })
+        print(f'Scheduled {service["url"]}')
