@@ -40,6 +40,7 @@ DB_NAME = "irio"
 SERVICES_COLLECTION_NAME = "services"
 ADMINS_COLLECTION_NAME = "admins"
 INCIDENTS_COLLECTION_NAME = "incidents"
+ADMINS_REACTION_COLLECTION_NAME = "admins_reactions"
 
 client = pymongo.MongoClient(MONGO_CONNECTION_KEY)
 db = client[DB_NAME]
@@ -58,6 +59,18 @@ def populate_collection(
     collection.drop()
     collection.insert_many(single_entry)
 
+
+
+# https://pynative.com/python-generate-random-string/
+def get_random_string(length):
+    import random
+    import string
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
+
+def generate_incident_admin_token():
+    return get_random_string(12)
 
 # =========================== SERVICES
 
@@ -158,11 +171,11 @@ def get_incident(
 
 
 # call in case of service unreachable detected.
-# TODO should use replace_one for atomicity
 def put_incident(
         url,
         db=db,
         incidents_collection_name=INCIDENTS_COLLECTION_NAME,
+        admins_reactions_collection_name=ADMINS_REACTION_COLLECTION_NAME,
         services_collection_name=SERVICES_COLLECTION_NAME):
     service = db[services_collection_name].find_one({"url": url})
     if service is None:
@@ -179,16 +192,51 @@ def put_incident(
     insert_res = collection.replace_one({"url": url}, entry)
     p(insert_res)
     
+    # put admin reactions entries
+    reactions = db[admins_reactions_collection_name]
+    
+    first_admin = service['first_admin']
+    second_admin = service['second_admin']
+    entry1 = {
+        "url": url,
+        "admin_name": first_admin,
+        "token": generate_incident_admin_token(),
+        "deactivation_timestamp": None,
+    }
+    reactions.insert_one(entry1)
+    entry2 = {
+        "url": url,
+        "admin_name": second_admin,
+        "token": generate_incident_admin_token(),
+        "deactivation_timestamp": None,
+    }
+    reactions.insert_one(entry2)
+    
     LOG(f"DB populated with new incident: {entry}")
 
 
-# idempotent, may be called several times
+# idempotent, may be called several times, returns False in case of error (i.a. wrong service name or token)
 def admin_deactivate_alert(
         url,
+        token,
         db=db,
-        incidents_collection_name=INCIDENTS_COLLECTION_NAME):
-    collection = db[incidents_collection_name]
-    collection.update_one({"url": url}, {"$set": {"active": False}})
+        incidents_collection_name=INCIDENTS_COLLECTION_NAME,
+        services_collection_name=SERVICES_COLLECTION_NAME,
+        admins_reactions_collection_name=ADMINS_REACTION_COLLECTION_NAME
+        ):
+    services = db[services_collection_name]
+    service = services.find_one({"url": url})
+    if service is None:
+        LOG(f"Trial to cancell for non-existing URL! No service {url} present!")
+        return False
+    reactions = db[admins_reactions_collection_name]
+    reaction = reactions.find_one({"url": url, "token": token})
+    if reaction is None:
+        LOG(f"Trial to cancell for existing URL, but with wrong token! Token {token} mismatch!")
+        return False
+
+    db[incidents_collection_name].update_one({"url": url}, {"$set": {"active": False}})
+    reactions.update_one({"url": url, "token": token}, {"$set": {"deactivation_timestamp": datetime.datetime.now()}})
     LOG(f"Alert for {url} deactivated!")
 
 
@@ -209,3 +257,10 @@ def should_report_second_admin(
     import time
     return not incident['reported_second_admin'] and datetime.datetime.now() - incident['datetime'] >= allowed_response_time
         
+
+
+populate_services(read_yaml(SERVICES_YAML_PATH))
+populate_incidents(read_yaml_incidents())
+
+URL = "http://www.google.com"
+put_incident(URL)
