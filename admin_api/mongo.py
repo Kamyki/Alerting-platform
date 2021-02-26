@@ -13,7 +13,7 @@ def ERROR(x):
     print("==== " + str(x))
     exit(1)
 
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     print("=== DEBUG variable set, output will be verbose...\n")
@@ -78,6 +78,8 @@ def populate_services(
         services,
         db=db, 
         services_collection_name=SERVICES_COLLECTION_NAME):
+    for s in services:
+        s['last_ok_visited_timestamp'] = None
     populate_collection(services, db[services_collection_name])
 
 def get_services(
@@ -202,7 +204,7 @@ def put_incident(
     service = db[services_collection_name].find_one({"url": url})
     if service is None:
         ERROR(f"Database inconsistency detected! No service {url} present!")
-    collection = db[incidents_collection_name]
+    incidents_col = db[incidents_collection_name]
     assert get_incident(url, db, incidents_collection_name) is None # that's a bit crappy check..
     entry = {
         'active': True,
@@ -211,9 +213,15 @@ def put_incident(
         'reported_second_admin': False,
     }
 
-    insert_res = collection.replace_one({"url": url}, entry)
-    p(insert_res)
     
+    # TODO that's crappy
+    insert_res = incidents_col.replace_one({"url": url}, entry)
+    if get_incident(url, db, incidents_collection_name) is None:
+        # there were nothing to be replaced
+        insert_res = incidents_col.insert_one(entry)
+    
+    assert get_incident(url, db, incidents_collection_name) is not None
+
     # put admin reactions entries
     reactions = db[admins_reactions_collection_name]
     

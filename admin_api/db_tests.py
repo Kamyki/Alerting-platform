@@ -31,7 +31,8 @@ class TestServicePopulate(unittest.TestCase):
     
     def test_deactivate_incident(self):
         URL = "http://www.google.com"
-        populate_incidents(read_yaml_incidents())
+        db[INCIDENTS_COLLECTION_NAME].drop()
+        put_incident(URL)
 
         token = get_incident_token_first_admin(URL)
         admin_deactivate_alert(URL, token)
@@ -39,21 +40,22 @@ class TestServicePopulate(unittest.TestCase):
         self.assertFalse(maybe_false)
 
     def test_should_report_second_admin(self):
-        populate_services(read_yaml(SERVICES_YAML_PATH))
-        populate_incidents(read_yaml_incidents())
+        services_dict = read_yaml(SERVICES_YAML_PATH)
+        populate_services(services_dict)
+        # populate_incidents(read_yaml_incidents())
+
+        db[INCIDENTS_COLLECTION_NAME].drop()
+        db[ADMINS_REACTION_COLLECTION_NAME].drop()
 
         URL = "http://www.google.com"
         put_incident(URL)
-
-        # from pprint import pprint
-        # pprint(get_incidents())
 
         # incident reported to admin1, but allowed_response_time not exceeded
         should = should_report_second_admin(URL)
         self.assertFalse(should)
 
         # allowed_response_time exceeded
-        allowed_response_time = 1
+        allowed_response_time = services_dict[0]['alerting_window']
         import time
         time.sleep(allowed_response_time)
         should = should_report_second_admin(URL)
