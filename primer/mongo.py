@@ -13,7 +13,7 @@ def ERROR(x):
     print("==== " + str(x))
     exit(1)
 
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
     print("=== DEBUG variable set, output will be verbose...\n")
@@ -29,7 +29,7 @@ def read_yaml(filename):
         except yaml.YAMLError as exc:
             ERROR(exc)
 
-db_creds = read_yaml("/app/secret.yaml")
+db_creds = read_yaml("secret.yaml")
 DB_USER = db_creds["db_user"]
 DB_PSWD = db_creds["db_password"]
 del db_creds
@@ -76,10 +76,8 @@ def generate_incident_admin_token():
 
 def populate_services(
         services,
-        db=db,
+        db=db, 
         services_collection_name=SERVICES_COLLECTION_NAME):
-    for s in services:
-        s['last_ok_visited_timestamp'] = None
     populate_collection(services, db[services_collection_name])
 
 def get_services(
@@ -103,7 +101,7 @@ def get_service(
 # =========================== ADMINS
 def populate_admins(
         admins,
-        db=db,
+        db=db, 
         admins_collection_name=ADMINS_COLLECTION_NAME):
     populate_collection(admins, db[admins_collection_name])
 
@@ -129,17 +127,17 @@ def __get_admin_email(
         ERROR(f"Database inconsistency! Couldn't find matching administrator with name '{admin_id}' in '{admins_collection_name}' collection!")
     res = res['email'] # cursed
     return res
-
+    
 def get_first_admin_email(
         service,
-        db=db,
+        db=db, 
         admins_collection_name=ADMINS_COLLECTION_NAME,
         services_collection_name=SERVICES_COLLECTION_NAME):
     return __get_admin_email(True, service, db, admins_collection_name, services_collection_name)
 
 def get_second_admin_email(
         service,
-        db=db,
+        db=db, 
         admins_collection_name=ADMINS_COLLECTION_NAME,
         services_collection_name=SERVICES_COLLECTION_NAME):
     return __get_admin_email(False, service, db, admins_collection_name, services_collection_name)
@@ -149,7 +147,7 @@ def get_second_admin_email(
 
 def populate_incidents(
         incidents,
-        db=db,
+        db=db, 
         incidents_collection_name=INCIDENTS_COLLECTION_NAME):
     populate_collection(incidents, db[incidents_collection_name])
 
@@ -204,7 +202,7 @@ def put_incident(
     service = db[services_collection_name].find_one({"url": url})
     if service is None:
         ERROR(f"Database inconsistency detected! No service {url} present!")
-    incidents_col = db[incidents_collection_name]
+    collection = db[incidents_collection_name]
     assert get_incident(url, db, incidents_collection_name) is None # that's a bit crappy check..
     entry = {
         'active': True,
@@ -213,18 +211,12 @@ def put_incident(
         'reported_second_admin': False,
     }
 
-
-    # TODO that's crappy
-    insert_res = incidents_col.replace_one({"url": url}, entry)
-    if get_incident(url, db, incidents_collection_name) is None:
-        # there were nothing to be replaced
-        insert_res = incidents_col.insert_one(entry)
-
-    assert get_incident(url, db, incidents_collection_name) is not None
-
+    insert_res = collection.replace_one({"url": url}, entry)
+    p(insert_res)
+    
     # put admin reactions entries
     reactions = db[admins_reactions_collection_name]
-
+    
     first_admin = service['first_admin']
     second_admin = service['second_admin']
     entry1 = {
@@ -241,7 +233,7 @@ def put_incident(
         "deactivation_timestamp": None,
     }
     reactions.insert_one(entry2)
-
+    
     LOG(f"DB populated with new incident: {entry}")
 
 
@@ -286,3 +278,5 @@ def should_report_second_admin(
     allowed_response_time = datetime.timedelta(seconds=service['allowed_response_time'])
     import time
     return not incident['reported_second_admin'] and datetime.datetime.now() - incident['datetime'] >= allowed_response_time
+
+

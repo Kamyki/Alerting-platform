@@ -1,0 +1,5 @@
+pydkron
+pymongo
+pyaml
+dnspython
+flask

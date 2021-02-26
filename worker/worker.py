@@ -5,7 +5,7 @@ import time
 import requests
 import argparse
 from requests.exceptions import MissingSchema, InvalidSchema
-from admin_api.mongo import *
+from mongo import *
 
 PING_FREQ_SEC = 1
 
@@ -48,7 +48,7 @@ def schedule_reporter_job(url):
 def report_incident(url):
     LOG("incident reporting..")
     put_incident(url)
-    # after putting persistent entry let's schedule dkron job 
+    # after putting persistent entry let's schedule dkron job
     schedule_reporter_job(url)
 
 
@@ -79,4 +79,3 @@ if __name__ == '__main__':
     else:
         LOG(f"OK, {p} finished successfully!")
         exit(0)
-

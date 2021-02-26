@@ -11,7 +11,7 @@ RUN echo "deb [trusted=yes] https://repo.fury.io/distribworks/ /" > \
 
 RUN apt-get update
 
-RUN apt-get install dkron
+RUN apt-get install -y --no-install-recommends dnsutils bash dkron ca-certificates openssl tzdata jq
 
 RUN pip install --upgrade pip
 
@@ -19,6 +19,8 @@ COPY ./requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
 
-COPY ./src /src
+COPY ./ /app
 
-CMD ["dkron"]
+ENTRYPOINT ["dkron"]
+
+CMD ["--help"]
