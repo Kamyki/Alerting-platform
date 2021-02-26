@@ -19,18 +19,20 @@ args = parser.parse_args()
 
 URL = args.url
 
-def check_alerting_window_exceeded(url, alerting_window):
+def check_alerting_window_exceeded(url):
     service = get_service(url)
     last_ok = service['last_ok_visited_timestamp']
+    alerting_window = service['alerting_window']
     now = datetime.datetime.now()
+
     if last_ok is None:
         db[SERVICES_COLLECTION_NAME].update_one({"url": url}, {"last_ok_visited_timestamp": now})
     else:
-        if datetime.timedelta(seconds=alerting_window) >= (last_ok - now):
+        if datetime.timedelta(seconds=alerting_window) >= (now - last_ok):
             report_incident(url)
 
 
-def main_func(url, alerting_window):
+def main_func(url):
     try:
         requests.get(url, timeout=1)
         # ok, request completed, finish healt check
@@ -53,7 +55,7 @@ def report_incident(url):
     first_admin_email = get_first_admin_email(service)
     token = get_incident_token_first_admin(URL)
     send_email(first_admin_email, token, URL)
-    
+
     # schedule dkron job
     schedule_reporter_job(url)
 
@@ -64,6 +66,5 @@ if __name__ == '__main__':
     LOG(f"worker.py: checking service {URL}...")
     if service is None:
         ERROR(f"Unknown service! {URL} service not found in database")
-    WINDOW_SEC = service['alerting_window']
 
-    main_func(URL, WINDOW_SEC)
+    main_func(URL)
