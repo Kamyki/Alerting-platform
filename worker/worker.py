@@ -26,22 +26,28 @@ def check_alerting_window_exceeded(url):
     now = datetime.datetime.now()
 
     if last_ok is None:
-        db[SERVICES_COLLECTION_NAME].update_one({"url": url}, {"last_ok_visited_timestamp": now})
+        db[SERVICES_COLLECTION_NAME].update_one({"url": url}, {"$set": {"last_ok_visited_timestamp": now}})
     else:
         if datetime.timedelta(seconds=alerting_window) >= (now - last_ok):
             report_incident(url)
 
 
 def main_func(url):
+    success = False
     try:
         requests.get(url, timeout=1)
         # ok, request completed, finish healt check
+        success = True
         LOG(f"Service {url} healthy!")
     except (MissingSchema, InvalidSchema):
+        success = True
         ERROR("Malformed URL! Please add 'http(s)://' prefix to passed --url!")
-    except:
+    except Exception:
+        success = False
         LOG(f"Service {url} unavailable! Checking if 'alerting_window' exceed...")
-        check_alerting_window_exceeded(url, alerting_window)
+
+    if not success:
+        check_alerting_window_exceeded(url)
 
 
 def schedule_reporter_job(url):
