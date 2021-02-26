@@ -1,5 +1,4 @@
-admins:
-  - name: Mateusz Bieganski
-    email: bieganski.m@wp.pl
-  - name: Kamil Mykitiuk
-    email: dasdsadsaddasfsanjvndsnsanda@gmail.com
+- name: Mateusz Bieganski
+  email: bieganski.m@wp.pl
+- name: Kamil Mykitiuk
+  email: dasdsadsaddasfsanjvndsnsanda@gmail.com

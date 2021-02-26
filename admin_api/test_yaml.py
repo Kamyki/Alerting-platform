@@ -2,7 +2,8 @@
 import yaml
 
 # NAME="services.yaml"
-NAME="admins.yaml"
+# NAME="admins.yaml"
+NAME="incidents.yaml"
 
 with open(NAME, 'r') as stream:
     try:

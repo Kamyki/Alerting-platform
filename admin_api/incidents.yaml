@@ -1,2 +1,8 @@
-incidents:
-       
+- url: "http://www.google.com"
+  datetime: CHANGE_ME
+  active: False
+  reported_second_admin: False
+- url: "http://www.github.com"
+  datetime: CHANGE_ME
+  active: True
+  reported_second_admin: False
