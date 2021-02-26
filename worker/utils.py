@@ -17,6 +17,7 @@ if SECRET_PATH is None:
 
 SECRET_CONFIG = read_yaml(SECRET_PATH)
 DEBUG = SECRET_CONFIG['debug']
+DKRON_ADDRESS = SECRET_CONFIG['dkron_server']
 
 if DEBUG:
     print("=== DEBUG variable set, output will be verbose...\n")
@@ -40,7 +41,7 @@ def send_email(addr, token, dead_url):
     server.starttls()
     server.login(FROM, FROM_PW)
 
-    msg = f"Hey, admin! Your service {dead_url} is dead! Please fix it and confirm you saw this message!\n \
+    msg = f"Hey, admin! Your service {dead_url} is dead! Please fix it and confirm you saw this message! \
         run 'python3 admin_cancel_incident.py --url {dead_url} --token {token}' to resolve incident!"
     server.sendmail("HEALTH WIZARD", addr, msg)
 

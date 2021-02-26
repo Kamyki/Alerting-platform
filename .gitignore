@@ -4,5 +4,5 @@ secret.yaml
 secret.yml
 primer/mongo.py
 admin_api/mongo.py
-primer/util.py
-admin_api/util.py
+primer/utils.py
+admin_api/utils.py

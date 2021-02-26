@@ -26,10 +26,16 @@ def check_alerting_window_exceeded(url):
     now = datetime.datetime.now()
 
     if last_ok is None:
+        LOG(f"First check? Start counting from now!")
+
         db[SERVICES_COLLECTION_NAME].update_one({"url": url}, {"$set": {"last_ok_visited_timestamp": now}})
     else:
-        if datetime.timedelta(seconds=alerting_window) >= (now - last_ok):
+        if datetime.timedelta(seconds=alerting_window) <= (now - last_ok):
+            LOG(f"Report incident!")
             report_incident(url)
+        else:
+            LOG(f"Seems fine: alerting window: {alerting_window}, now - last_ok: {now - last_ok}")
+
 
 
 def main_func(url):
@@ -52,18 +58,37 @@ def main_func(url):
 
 def schedule_reporter_job(url):
     LOG("dummy Reporter Job scheduling..")
+    api = Dkron([DKRON_ADDRESS])
+
+    # api.apply_job({
+    #     "schedule": f'@once',
+    #     "name": str(service['_id']),
+    #
+    #     "timezone": "Europe/Warsaw",
+    #     "owner": "Alerting Platform",
+    #     "executor": "shell",
+    #     "executor_config": {
+    #       "command": f'python3 /app/worker.py --url {service["url"]}'
+    #     },
+    #    "processors": {
+    #      "log": {
+    #        "forward": "true"
+    #      }
+    #    }
+    # })
     pass
 
 
 def report_incident(url):
     LOG("incident reporting..")
-    put_incident(url)
-    first_admin_email = get_first_admin_email(service)
-    token = get_incident_token_first_admin(URL)
-    send_email(first_admin_email, token, URL)
+    if get_incident(url) is None:
+        put_incident(url)
+        first_admin_email = get_first_admin_email(service)
+        token = get_incident_token_first_admin(URL)
+        send_email(first_admin_email, token, URL)
 
-    # schedule dkron job
-    schedule_reporter_job(url)
+        # schedule dkron job
+        schedule_reporter_job(url)
 
 
 if __name__ == '__main__':
