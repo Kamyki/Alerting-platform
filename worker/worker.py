@@ -19,27 +19,27 @@ args = parser.parse_args()
 
 URL = args.url
 
-def check_alerting_window_exceeded(url):
+def check_alerting_window_exceeded(url, alerting_window):
     service = get_service(url)
     last_ok = service['last_ok_visited_timestamp']
     now = datetime.datetime.now()
     if last_ok is None:
         db[SERVICES_COLLECTION_NAME].update_one({"url": url}, {"last_ok_visited_timestamp": now})
     else:
-        if datetime.timedelta(seconds=WINDOW_SEC) >= (last_ok - now):
+        if datetime.timedelta(seconds=alerting_window) >= (last_ok - now):
             report_incident(url)
 
 
-def main_func(url, timeout=1):
+def main_func(url, alerting_window):
     try:
-        requests.get(url, timeout=timeout)
+        requests.get(url, timeout=1)
         # ok, request completed, finish healt check
         LOG(f"Service {url} healthy!")
     except (MissingSchema, InvalidSchema):
         ERROR("Malformed URL! Please add 'http(s)://' prefix to passed --url!")
     except:
         LOG(f"Service {url} unavailable! Checking if 'alerting_window' exceed...")
-        check_alerting_window_exceeded(url)
+        check_alerting_window_exceeded(url, alerting_window)
 
 
 def schedule_reporter_job(url):
