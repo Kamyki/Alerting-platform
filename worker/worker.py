@@ -59,7 +59,9 @@ def report_incident(url):
 
 
 if __name__ == '__main__':
+    DEBUG = True
     service = get_service(URL)
+    LOG(f"worker.py: checking service {URL}...")
     if service is None:
         ERROR(f"Unknown service! {URL} service not found in database")
     WINDOW_SEC = service['alerting_window']
