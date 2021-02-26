@@ -32,11 +32,11 @@ def read_yaml(filename):
 db_creds = read_yaml("/app/secret.yaml")
 DB_USER = db_creds["db_user"]
 DB_PSWD = db_creds["db_password"]
+DB_NAME = db_creds["db_name"]
 del db_creds
 
 MONGO_CONNECTION_KEY=client = f"mongodb+srv://{DB_USER}:{DB_PSWD}@klaster.jbd28.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
-DB_NAME = "irio"
 SERVICES_COLLECTION_NAME = "services"
 ADMINS_COLLECTION_NAME = "admins"
 INCIDENTS_COLLECTION_NAME = "incidents"
