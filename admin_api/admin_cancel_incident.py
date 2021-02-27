@@ -10,13 +10,13 @@ from requests.exceptions import MissingSchema, InvalidSchema
 PING_FREQ_SEC = 1
 
 parser = argparse.ArgumentParser(description="Incident cancellation script. Sends POST request for given url with given token.")
-parser.add_argument('--reported_url', help='URL of dead reported service.', required=True)
+parser.add_argument('--url', help='URL of dead reported service.', required=True)
 parser.add_argument('--token', help='Auth token to cancel incident', required=True)
 parser.add_argument('--endpoint', help='Cancellation endpoint (http://ADDR:PORT)', required=True)
 
 args = parser.parse_args()
 
-URL = args.reported_url
+URL = args.url
 TOKEN = args.token
 ENDPOINT = args.endpoint
 
@@ -30,11 +30,14 @@ def ERROR(x):
     exit(1)
 
 
+from requests.exceptions import InvalidURL
+
 try:
     response = requests.post(ENDPOINT, data={'url': URL, 'token': TOKEN})
-except (MissingSchema, InvalidSchema):
-    ERROR(f"Malformed Endpoint URL! {ENDPOINT} is malformed. Please add 'http(s)://' prefix to passed --url!")
-except:
+except (InvalidURL, MissingSchema, InvalidSchema):
+    ERROR(f"Malformed Endpoint URL! {ENDPOINT} is malformed. Did you add 'http(s)://' prefix to passed --url?")
+except Exception as e:
+    print(e)
     # TODO type of exception (timeout or wrong domain)
     ERROR(f"Error: Service POST '{ENDPOINT}' unavailable!")
 

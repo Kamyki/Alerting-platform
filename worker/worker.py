@@ -58,7 +58,7 @@ def main_func(url):
 
 def schedule_reporter_job(url):
     LOG("dummy Reporter Job scheduling..")
-    api = Dkron([DKRON_ADDRESS])
+    # api = Dkron([DKRON_ADDRESS])
 
     # api.apply_job({
     #     "schedule": f'@once',
@@ -92,7 +92,6 @@ def report_incident(url):
 
 
 if __name__ == '__main__':
-    DEBUG = True
     service = get_service(URL)
     LOG(f"worker.py: checking service {URL}...")
     if service is None:

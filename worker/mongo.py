@@ -247,6 +247,7 @@ def admin_deactivate_alert(
     db[incidents_collection_name].update_one({"url": url}, {"$set": {"active": False}})
     reactions.update_one({"url": url, "token": token}, {"$set": {"deactivation_timestamp": datetime.datetime.now()}})
     LOG(f"Alert for {url} deactivated!")
+    return True
 
 
 # returns True if event active, admin1 already reported and timeouted (>= allowed_response_time)
