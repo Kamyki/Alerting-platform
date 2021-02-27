@@ -31,7 +31,6 @@ def check_alerting_window_exceeded(url):
         db[SERVICES_COLLECTION_NAME].update_one({"url": url}, {"$set": {"last_ok_visited_timestamp": now}})
     else:
         if datetime.timedelta(seconds=alerting_window) <= (now - last_ok):
-            LOG(f"Report incident!")
             report_incident(url)
         else:
             LOG(f"Seems fine: alerting window: {alerting_window}, now - last_ok: {now - last_ok}")
@@ -80,8 +79,8 @@ def schedule_reporter_job(url):
 
 
 def report_incident(url):
-    LOG("incident reporting..")
     if get_incident(url) is None:
+        LOG("incident reporting: True (first time)")
         put_incident(url)
         first_admin_email = get_first_admin_email(service)
         token = get_incident_token_first_admin(URL)
@@ -89,6 +88,9 @@ def report_incident(url):
 
         # schedule dkron job
         schedule_reporter_job(url)
+    else:
+        LOG("incident reporting: False (already reported)")
+
 
 
 if __name__ == '__main__':
