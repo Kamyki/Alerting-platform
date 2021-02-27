@@ -5,7 +5,7 @@
         alerting_window: 3
         allowed_response_time: 1
 
--       url: http://www.github.com:122  # this one for tests purpose will be incident free
+-       url: http://www.github.com:2137  # this one for tests purpose will be incident free
         first_admin: Mateusz Bieganski
         second_admin: Kamil Mykitiuk
         frequency: 10

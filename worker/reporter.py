@@ -27,5 +27,8 @@ if __name__ == "__main__":
     second_admin_email = get_second_admin_email(service)
     token = get_incident_token_second_admin(FAIL_URL)
 
-    if should_report_second_admin(FAIL_URL):
+    report = should_report_second_admin(FAIL_URL)
+    LOG(f"reporter.py: should_report_second_admin({FAIL_URL}) == {report}")
+    if report:
+        db[INCIDENTS_COLLECTION_NAME].update_one({"url": FAIL_URL, "active": True}, {"$set": {"reported_second_admin": True}})
         send_email(first_admin_email, token, FAIL_URL)

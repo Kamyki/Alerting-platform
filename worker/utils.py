@@ -33,16 +33,21 @@ FROM = "matinekbot@gmail.com"
 FROM_PW = "IRIO2021"
 
 
-
-
 def send_email(addr, token, dead_url):
+    import yagmail
     import smtplib
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login(FROM, FROM_PW)
 
-    msg = f"Hey, admin! Your service {dead_url} is dead! Please fix it and confirm you saw this message! \
-        run 'python3 admin_cancel_incident.py --url {dead_url} --token {token}' to resolve incident!"
-    server.sendmail("HEALTH WIZARD", addr, msg)
+    api_endpoint = "http://127.0.0.1:5000/cancel (!! or another up-to-date address..)"
+
+    msg = f"Hey, admin! Your service {dead_url} is dead! Please fix it and confirm you saw this message!\n \
+        run 'python3 admin_cancel_incident.py --url {dead_url} --token {token} --endpoint {api_endpoint}' to resolve incident!"
+    yag = yagmail.SMTP(FROM, FROM_PW)
+    yag.send(addr, f"Your service is dead! {dead_url}", msg)
+    LOG(msg)
+
+    # server.sendmail("HEALTH WIZARD", addr, msg)
 
     LOG(f"INFO: Email to '{addr}' sent successfully!")
