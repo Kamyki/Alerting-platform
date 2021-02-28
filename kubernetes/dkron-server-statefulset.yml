@@ -77,7 +77,6 @@ spec:
             touch /tmp/status
             while true; do
               curl -s -o - --connect-timeout 10 http://127.0.0.1:8080/v1/isleader| tr -d '"' > /tmp/status_tmp
-              cat /tmp/status_tmp
               if [[ `cat /tmp/status_tmp` == `cat /tmp/status` ]]; then
                 echo "No status changed. Skipping"
               elif [[ `cat /tmp/status_tmp` == "I am a leader" ]]; then
@@ -93,7 +92,7 @@ spec:
               sleep 5
             done
       - name: dkron
-        image: eu.gcr.io/kubernetes-labs-293308/dkron-test
+        image: eu.gcr.io/kubernetes-labs-293308/worker
         ports:
         - name: web
           containerPort: 8080

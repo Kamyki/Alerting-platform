@@ -30,12 +30,13 @@ spec:
         app: dkron-worker
       name: dkron-worker
     spec:
+      serviceAccount: dkron-server-account
       containers:
       - args:
-        - agent --config /opt/local/dkron/config/dkron.yml
+        - agent
         volumeMounts:
         - name: dkron-worker
-          mountPath: /opt/local/dkron/config
+          mountPath: /etc/dkron
         - name: secret-config
           mountPath: /secret
         image: eu.gcr.io/kubernetes-labs-293308/worker

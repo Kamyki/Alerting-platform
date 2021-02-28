@@ -26,10 +26,6 @@ client = pymongo.MongoClient(MONGO_CONNECTION_KEY)
 db = client[DB_NAME]
 # collection = db[COLLECTION_NAME]
 
-SERVICES_YAML_PATH="services.yaml"
-ADMINS_YAML_PATH="admins.yaml"
-INCIDENTS_YAML_PATH="incidents.yaml"
-
 # =========================== GENERIC
 
 def populate_collection(

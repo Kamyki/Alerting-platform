@@ -10,7 +10,7 @@ cp ./worker/utils.py ./admin_api/utils.py
 docker build -t alerting-platform/admin-server -f admin_api/Dockerfile ./admin_api
 docker build -t alerting-platform/worker -f worker/Dockerfile ./worker
 
-docker run -p 8080:8080 -p 25:25 -p 465:465 -p 587:587 --name dkron --rm -d alerting-platform/worker \
+docker run -p 8080:8080  --name dkron --rm -d alerting-platform/worker \
   agent --server --bootstrap-expect=1 --config /app/dkron.yml
 
 docker run -p 80:80 -p 27017:27017 --rm --name admin-server -d alerting-platform/admin-server

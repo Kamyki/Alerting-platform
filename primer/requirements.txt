@@ -2,4 +2,3 @@ dkron
 pymongo
 pyaml
 dnspython
-six

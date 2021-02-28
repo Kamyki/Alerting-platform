@@ -19,6 +19,10 @@ SECRET_CONFIG = read_yaml(SECRET_PATH)
 DEBUG = SECRET_CONFIG['debug']
 DKRON_ADDRESS = SECRET_CONFIG['dkron_server']
 
+SERVICES_YAML_PATH=SECRET_CONFIG['services']
+ADMINS_YAML_PATH=SECRET_CONFIG['admins']
+INCIDENTS_YAML_PATH=SECRET_CONFIG['incidents']
+
 if DEBUG:
     print("=== DEBUG variable set, output will be verbose...\n")
 

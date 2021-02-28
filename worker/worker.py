@@ -60,7 +60,7 @@ def schedule_reporter_job(url):
     api = Dkron([DKRON_ADDRESS])
 
     api.apply_job({
-        "schedule": f'@at {now = datetime.datetime.now() + datetime.timedelta(seconds=10)}',
+        "schedule": f'@at {datetime.datetime.now() + datetime.timedelta(seconds=10)}',
         "name": str(service['_id']),
 
         "timezone": "Europe/Warsaw",

@@ -1,9 +1,11 @@
 from dkron import Dkron
 from mongo import *
-from utils import read_yaml, LOG, DKRON_ADDRESS
+from utils import read_yaml, LOG, DKRON_ADDRESS, SERVICES_YAML_PATH, ADMINS_YAML_PATH
+from time import sleep
 
+def restart():
+    LOG("Restart jobs")
 
-if __name__ == "__main__":
     db[INCIDENTS_COLLECTION_NAME].drop()
     db[ADMINS_REACTION_COLLECTION_NAME].drop()
     db[SERVICES_COLLECTION_NAME].drop()
@@ -41,3 +43,15 @@ if __name__ == "__main__":
            }
         })
         LOG(f'Scheduled {service["url"]}')
+
+if __name__ == "__main__":
+    restart()
+    current_services = read_yaml(SERVICES_YAML_PATH)
+
+
+    while True:
+        services = read_yaml(SERVICES_YAML_PATH)
+        if current_services != services:
+            restart()
+            current_services = services
+        sleep(60)
