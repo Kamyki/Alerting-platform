@@ -29,7 +29,6 @@ spec:
   ports:
   - name: web
     port: 8080
-  clusterIP: None
   selector:
     app: dkron-server
     leader: "true"
@@ -78,12 +77,13 @@ spec:
             touch /tmp/status
             while true; do
               curl -s -o - --connect-timeout 10 http://127.0.0.1:8080/v1/isleader| tr -d '"' > /tmp/status_tmp
+              cat /tmp/status_tmp
               if [[ `cat /tmp/status_tmp` == `cat /tmp/status` ]]; then
                 echo "No status changed. Skipping"
               elif [[ `cat /tmp/status_tmp` == "I am a leader" ]]; then
                 kubectl label pods $(hostname) leader=true --overwrite=true
                 echo "I am a leader" > /tmp/status
-              elif [[ `cat /tmp/status_tmp` == "I am follower" ]]; then
+              elif [[ `cat /tmp/status_tmp` == "I am a follower" ]]; then
                 kubectl label pods $(hostname) leader=false --overwrite=true
                 echo "I am a follower" > /tmp/status
               else

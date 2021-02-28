@@ -1,0 +1,29 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: primer
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - image: eu.gcr.io/kubernetes-labs-293308/primer
+            name: primer
+            volumeMounts:
+            - name: db-config
+              mountPath: /app
+            - name: secret-config
+              mountPath: /secret
+            env:
+            - name: ALERTING_SECRET_PATH
+              value: /secret/secret.yaml
+          volumes:
+          - name: db-config
+            configMap:
+              name: db-config
+          - name: secret-config
+            configMap:
+              name: secret-config

@@ -2,4 +2,4 @@ dkron
 pymongo
 pyaml
 dnspython
-flask
+six

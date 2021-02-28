@@ -6,7 +6,7 @@ metadata:
   labels:
     app: admin-server
 spec:
-  publishNotReadyAddresses: true
+  type: LoadBalancer
   ports:
   - name: web
     port: 80
@@ -25,18 +25,41 @@ spec:
   selector:
     matchLabels:
       app: admin-server
-      component: worker
   template:
     metadata:
       labels:
         app: admin-server
       name: admin-server
     spec:
+      terminationGracePeriodSeconds: 60 # Max wait time for jobs to be finished, then force kill the pod.
       containers:
-        image: eu.gcr.io/kubernetes-labs-293308/admin-server
+      - image: eu.gcr.io/kubernetes-labs-293308/admin-server
         name: dkron
+        volumeMounts:
+        - name: secret-config
+          mountPath: /secret
+        env:
+        - name: ALERTING_SECRET_PATH
+          value: /secret/secret.yaml
         ports:
-        - containerPort: 8080
+        - containerPort: 80
           name: web
           protocol: TCP
-      terminationGracePeriodSeconds: 3600 # Max wait time for jobs to be finished, then force kill the pod.
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          periodSeconds: 30
+          failureThreshold: 3
+          initialDelaySeconds: 120 # Sometimes it takes a lot to rejoin node to a cluster. Pausing there in case we do rolling pod update.
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          periodSeconds: 30
+          failureThreshold: 3
+          initialDelaySeconds: 120
+      volumes:
+      - name: secret-config
+        configMap:
+          name: secret-config

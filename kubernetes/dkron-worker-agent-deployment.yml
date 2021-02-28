@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: admin-server
+  name: dkron-worker
   labels:
-    app: admin-server
+    app: dkron-worker
 spec:
   publishNotReadyAddresses: true
   ports:
   - name: web
     port: 80
   selector:
-    app: admin-server
+    app: dkron-worker
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -18,29 +18,31 @@ metadata:
   annotations:
   labels:
     app: dkron-worker
-    component: worker
   name: dkron-worker
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       app: dkron-worker
-      component: worker
   template:
     metadata:
       labels:
         app: dkron-worker
-        component: worker
       name: dkron-worker
     spec:
       containers:
       - args:
-        - agent
+        - agent --config /opt/local/dkron/config/dkron.yml
         volumeMounts:
         - name: dkron-worker
           mountPath: /opt/local/dkron/config
-        image: eu.gcr.io/kubernetes-labs-293308/dkron-test
+        - name: secret-config
+          mountPath: /secret
+        image: eu.gcr.io/kubernetes-labs-293308/worker
         name: dkron
+        env:
+        - name: ALERTING_SECRET_PATH
+          value: /secret/secret.yaml
         ports:
         - containerPort: 8080
           name: web
@@ -52,8 +54,11 @@ spec:
           name: raft
           protocol: TCP
       #serviceAccount: dkron
-      terminationGracePeriodSeconds: 3600 # Max wait time for jobs to be finished, then force kill the pod.
+      terminationGracePeriodSeconds: 60 # Max wait time for jobs to be finished, then force kill the pod.
       volumes:
       - name: dkron-worker
         configMap:
           name: dkron-worker
+      - name: secret-config
+        configMap:
+          name: secret-config

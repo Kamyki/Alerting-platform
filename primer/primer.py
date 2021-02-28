@@ -1,26 +1,28 @@
 from dkron import Dkron
-from mongo import get_services
-
-def ERROR(x):
-    print("==== " + str(x))
-    exit(1)
-
-
-def read_yaml(filename):
-    import yaml
-    with open(filename, 'r') as stream:
-        try:
-            return yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            ERROR(exc)
+from mongo import *
+from utils import read_yaml, LOG, DKRON_ADDRESS
 
 
 if __name__ == "__main__":
-    hosts = ['http://localhost:8080']
+    db[INCIDENTS_COLLECTION_NAME].drop()
+    db[ADMINS_REACTION_COLLECTION_NAME].drop()
+    db[SERVICES_COLLECTION_NAME].drop()
+    db[ADMINS_COLLECTION_NAME].drop()
+    populate_services(read_yaml(SERVICES_YAML_PATH))
+    populate_admins(read_yaml(ADMINS_YAML_PATH))
+
+    #TODO stop previous jobs
+    hosts = [DKRON_ADDRESS]
     api = Dkron(hosts)
 
+    jobs = [x['id'] for x in api.get_jobs()]
+    LOG("Delete jobs")
+    for job in jobs:
+        api.delete_job(job)
+        LOG(f'Deleted {job}')
+
     services = get_services()
-    print("Start scheduling jobs")
+    LOG("Start scheduling jobs")
     for service in services:
         api.apply_job({
             "schedule": f'@every { service["frequency"] }s',
@@ -38,4 +40,4 @@ if __name__ == "__main__":
              }
            }
         })
-        print(f'Scheduled {service["url"]}')
+        LOG(f'Scheduled {service["url"]}')
