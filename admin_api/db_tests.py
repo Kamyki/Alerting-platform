@@ -1,6 +1,6 @@
 import unittest
 
-DEBUG = False # must be before including to surpress 
+DEBUG = False # must be before including to surpress
 from mongo import *
 
 class TestServicePopulate(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestServicePopulate(unittest.TestCase):
         # put_incident("http://www.google.com")
         incidents = get_incidents()
         self.assertEqual(len(list(incidents)), 2)
-    
+
     def test_deactivate_incident(self):
         URL = "http://www.google.com"
         db[INCIDENTS_COLLECTION_NAME].drop()

@@ -3,7 +3,7 @@
 import pymongo
 from pprint import pprint
 import datetime
-from utils import SECRET_CONFIG, read_yaml, LOG, ERROR
+from utils import *
 
 pt = lambda x: print(type(x))
 pd = lambda x: pprint(dir(x))
