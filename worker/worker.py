@@ -72,6 +72,9 @@ def schedule_reporter_job(service):
          "log": {
            "forward": "true"
          }
+       },
+       "tags": {
+          "worker": "crawler:1"
        }
     })
     pass
@@ -86,7 +89,7 @@ def report_incident(service):
         send_email(first_admin_email, token, URL)
 
         # schedule dkron job
-        schedule_reporter_job(url)
+        schedule_reporter_job(URL)
     else:
         LOG("incident reporting: False (already reported)")
 

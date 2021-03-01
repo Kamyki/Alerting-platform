@@ -100,6 +100,9 @@ spec:
           containerPort: 8946
         - name: raft
           containerPort: 6868
+        volumeMounts:
+        - name: secret-config
+          mountPath: /secret
         env:
         - name: INITIAL_CLUSTER_SIZE
           value: "3"
@@ -190,3 +193,7 @@ spec:
           periodSeconds: 30
           failureThreshold: 3
           initialDelaySeconds: 120
+      volumes:
+      - name: secret-config
+        configMap:
+          name: secret-config

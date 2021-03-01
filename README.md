@@ -14,7 +14,7 @@ Brief descriptions of sources:
 * * configmap.yaml - basic configurations for dkron and other applications mounted into appropriate pods
 * * dkron-server-statefulset.yml - configuration for dkron server pods. Each pod has two containers: dkron proper and labelchaner which detects leader and assigns it k8's labels. Based on these labels service assigns internal IP.
 * * dkron-worker-agent-deployment.yml - configuration for dkron worker pods. Compared to dkron server pods, those don't have external api and only execute assigned jobs after joing swarm.
-* * primer-job.yml - cron job which execute primer.py after detecting change in configuration.
+* * primer-job.yml - pod which execute primer.py after detecting change in configuration.
 * * role.yml - custrom k8 Role for allowing pods to reassign their labels
 * `primer/*` - boot process of whole architecture, running first jobs on `dkron` based on database services list.
 * `worker/worker.py` - script run each `frequency` seconds for each service; it checks URL availability, if it sees that it doesn't work longer than `alerting window` it sends email to first admin and schedules `reporter.py`, that will check whether time for response for admin1 exceeded

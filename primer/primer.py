@@ -40,7 +40,10 @@ def restart():
              "log": {
                "forward": "true"
              }
-           }
+           },
+           "tags": {
+              "worker": "crawler:1"
+            }
         })
         LOG(f'Scheduled {service["url"]}')
 

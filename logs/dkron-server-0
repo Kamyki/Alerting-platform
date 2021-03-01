@@ -1,0 +1,1302 @@
+10.0.4.96 peer
+10.0.4.96 pod
+10.0.3.128 peer
+10.0.4.96 pod
+10.0.1.112 peer
+10.0.4.96 pod
+LAN peers appear ready, 4 verifications left
+10.0.4.96 peer
+10.0.4.96 pod
+10.0.3.128 peer
+10.0.4.96 pod
+10.0.1.112 peer
+10.0.4.96 pod
+LAN peers appear ready, 3 verifications left
+10.0.4.96 peer
+10.0.4.96 pod
+10.0.3.128 peer
+10.0.4.96 pod
+10.0.1.112 peer
+10.0.4.96 pod
+LAN peers appear ready, 2 verifications left
+10.0.4.96 peer
+10.0.4.96 pod
+10.0.3.128 peer
+10.0.4.96 pod
+10.0.1.112 peer
+10.0.4.96 pod
+LAN peers appear ready, 1 verifications left
+10.0.4.96 peer
+10.0.4.96 pod
+10.0.3.128 peer
+10.0.4.96 pod
+10.0.1.112 peer
+10.0.4.96 pod
+LAN peers appear ready, 0 verifications left
+time="2021-03-01T19:23:58Z" level=info msg="agent: Dkron agent starting" node=dkron-server-0
+time="2021-03-01T19:23:58Z" level=info msg="agent: Retry join LAN is supported for: aliyun aws azure digitalocean gce k8s linode mdns os packet scaleway softlayer tencentcloud triton vsphere" node=dkron-server-0
+time="2021-03-01T19:23:58Z" level=info msg="agent: Joining cluster..." cluster=LAN node=dkron-server-0
+time="2021-03-01T19:23:58Z" level=warning msg="agent: Join LAN failed: <nil>, retrying in 30s" node=dkron-server-0
+time="2021-03-01T19:24:28Z" level=info msg="agent: Join LAN completed. Synced with 2 initial agents" node=dkron-server-0
+time="2021-03-01T19:24:28Z" level=info msg="api: Running HTTP server" address=":8080" node=dkron-server-0
+time="2021-03-01T19:24:28Z" level=info msg="dkron: monitoring leadership" node=dkron-server-0
+time="2021-03-01T19:24:29Z" level=info msg="agent: Listen for events" node=dkron-server-0
+time="2021-03-01T19:24:29Z" level=info msg="agent: Received event" event=member-update node=dkron-server-0
+time="2021-03-01T19:24:29Z" level=info msg="agent: Received event" event=member-join node=dkron-server-0
+time="2021-03-01T19:24:29Z" level=info msg="adding server" node=dkron-server-0 server=dkron-server-0
+time="2021-03-01T19:24:29Z" level=info msg="agent: found expected number of peers, attempting to bootstrap cluster...peers10.0.1.112:6868,10.0.4.96:6868,10.0.3.128:6868" node=dkron-server-0
+time="2021-03-01T19:24:29Z" level=info msg="agent: Received event" event=member-update node=dkron-server-0
+time="2021-03-01T19:24:30Z" level=info msg="dkron: cluster leadership acquired" node=dkron-server-0
+time="2021-03-01T19:24:30Z" level=info msg="dkron: monitoring leadership" node=dkron-server-0
+time="2021-03-01T19:24:30Z" level=info msg="agent: Starting scheduler" node=dkron-server-0
+time="2021-03-01T19:26:32Z" level=info msg="agent: Received event" event=member-update node=dkron-server-0
+time="2021-03-01T19:26:34Z" level=info msg="agent: Received event" event=member-update node=dkron-server-0
+time="2021-03-01T19:29:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:29:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:29:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614626947035113985-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:10Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614626947034949916-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== First check? Start counting from now!
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:29:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:29:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614626957014584744-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:22Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614626957012038761-dkron-worker-6c57779ddd-t4htc -----
+exit status 1
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== incident reporting: True (first time)
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== DB populated with new incident: {'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650606), 'url': 'http://www.github.com:2232', 'reported_second_admin': False, '_id': ObjectId('603d408f4865b6274396bf92')}
+==== Hey, admin! Your service http://www.github.com:2232 is dead! Please fix it and confirm you saw this message!
+         run 'python3 admin_cancel_incident.py --url http://www.github.com:2232 --token bmdjlwspmupt --endpoint http://127.0.0.1:5000/cancel (!! or another up-to-date address..)' to resolve incident!
+==== INFO: Email to 'k.mykitiuk@gmail.com' sent successfully!
+==== dummy Reporter Job scheduling..
+Traceback (most recent call last):
+  File "/app/worker.py", line 104, in <module>
+    main_func(service)
+  File "/app/worker.py", line 54, in main_func
+    check_alerting_window_exceeded(service)
+  File "/app/worker.py", line 33, in check_alerting_window_exceeded
+    report_incident(service)
+  File "/app/worker.py", line 92, in report_incident
+    schedule_reporter_job(URL)
+  File "/app/worker.py", line 59, in schedule_reporter_job
+    api = Dkron([DKRON_ADDRESS])
+NameError: name 'Dkron' is not defined
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:29:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:29:29Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614626967016934592-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:29Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614626967012903476-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:29:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:29:38Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614626977014967825-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614626977013382514-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:29:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:29:49Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614626987049882399-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:50Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614626987042015320-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:29:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:29:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614626997021130427-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:29:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614626997032834716-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:30:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:30:08Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627007026088493-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:10Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627007025435921-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:30:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:30:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627017021232604-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627017018566725-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:30:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:30:29Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627027015399799-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:30Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627027014216488-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:30:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:30:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627037021512650-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:40Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627037018461215-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:30:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:30:48Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627047021343187-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:49Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627047015899665-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:30:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:30:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627057021417636-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:30:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627057022165716-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:31:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:31:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627067025482047-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:10Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627067024699239-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:31:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:31:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627077025827931-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627077023428054-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:31:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:31:28Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627087020082076-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:30Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627087016193566-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:31:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:31:38Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627097024751210-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:40Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627097025123969-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:31:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:31:48Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627107022625730-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:49Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627107018317075-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:31:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:31:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627117021913526-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:31:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627117021670835-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:32:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:32:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627127019046035-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:10Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627127015907256-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:32:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627137025082023-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+time="2021-03-01T19:32:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627137023856741-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:32:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:32:28Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627147014560938-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:30Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627147014084201-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:32:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:32:38Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627157019379445-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627157016858289-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:32:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:32:48Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627167025499486-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:50Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627167022442566-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:32:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:32:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627177021820362-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:32:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627177020208147-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:33:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:33:08Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627187018838040-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627187017308708-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:33:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:33:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627197022856755-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:20Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627197020748434-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:33:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:33:28Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627207013669917-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:30Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627207013238722-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:33:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:33:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627217022534752-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:40Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627217021927197-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:33:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:33:48Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627227021013119-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:49Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627227016344969-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:33:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:33:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627237023775150-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:33:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627237020034403-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:34:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:34:08Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627247013807999-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627247014032944-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:34:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627257026872115-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+time="2021-03-01T19:34:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:20Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627257026733603-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:34:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:34:28Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627267018464641-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:29Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627267013489589-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:34:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:34:38Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627277021641297-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627277017848996-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:34:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:34:48Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627287022479387-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:49Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627287016845791-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:34:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:34:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627297023986490-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:34:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627297018856705-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:35:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:35:08Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627307013799124-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627307014608826-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:35:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:35:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627317021719834-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627317023388300-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:35:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627327018462055-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:28Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+time="2021-03-01T19:35:29Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627327013400406-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:35:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:35:38Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627337021083333-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627337020041028-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:35:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:35:49Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627347018303047-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:50Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627347023065921-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:35:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:35:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:35:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627357020269350-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:00Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627357019099393-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:36:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:36:08Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627367016986634-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627367017995691-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:36:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:36:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627377023970064-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627377020275696-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:36:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:36:28Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627387015675519-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:30Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627387020082513-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:36:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:36:38Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627397022103349-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627397019160355-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:36:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:36:48Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627407024167071-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:50Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627407018915075-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:36:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:36:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627417020074333-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:36:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627417019269264-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:37:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:37:08Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627427016147440-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:09Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627427013253813-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:37:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:37:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627437040027464-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:20Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627437038385189-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:37:27Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:37:28Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627447014884508-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:30Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627447014138938-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.2.185:6868"
+time="2021-03-01T19:37:37Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627457018645660-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:38Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+time="2021-03-01T19:37:39Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627457028195378-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:37:47Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:37:49Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627467018274142-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:50Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627467022051494-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:37:57Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.3.129:6868"
+time="2021-03-01T19:37:58Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627477020718950-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:37:59Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627477021124367-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:38:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:38:07Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:38:08Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627487018289225-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:38:10Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627487015702074-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----
+time="2021-03-01T19:38:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cd node="10.0.2.185:6868"
+time="2021-03-01T19:38:17Z" level=info msg="agent: Calling AgentRun" job_name=603d407909c16f4ed17059cc node="10.0.3.129:6868"
+time="2021-03-01T19:38:18Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cc execution=1614627497026320135-dkron-worker-6c57779ddd-m8hmd -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.google.com...
+==== {'_id': ObjectId('603d407909c16f4ed17059cc'), 'url': 'http://www.google.com', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 3, 'allowed_response_time': 1, 'last_ok_visited_timestamp': None}
+==== Service http://www.google.com healthy!
+
+----- END OUTPUT -----
+time="2021-03-01T19:38:19Z" level=info msg="grpc: Processing execution with plugin" node=dkron-server-0 plugin=log
+----- BEGIN OUTPUT job=603d407909c16f4ed17059cd execution=1614627497021542353-dkron-worker-6c57779ddd-t4htc -----
+=== DEBUG variable set, output will be verbose...
+
+==== worker.py: checking service http://www.github.com:2232...
+==== {'_id': ObjectId('603d407909c16f4ed17059cd'), 'url': 'http://www.github.com:2232', 'first_admin': 'Mateusz Bieganski', 'second_admin': 'Kamil Mykitiuk', 'frequency': 10, 'alerting_window': 4, 'allowed_response_time': 1, 'last_ok_visited_timestamp': datetime.datetime(2021, 3, 1, 19, 29, 9, 661000)}
+==== Service http://www.github.com:2232 unavailable! Checking if 'alerting_window' exceed...
+==== {'_id': ObjectId('603d408f4865b6274396bf92'), 'active': True, 'datetime': datetime.datetime(2021, 3, 1, 19, 29, 19, 650000), 'url': 'http://www.github.com:2232', 'reported_second_admin': False}
+==== incident reporting: False (already reported)
+
+----- END OUTPUT -----

@@ -1,0 +1,52 @@
+ping: dkron-server-0.dkron-server.default.svc.cluster.local: Name or service not known
+Waiting for LAN peer dkron-server-0.dkron-server.default.svc.cluster.local...
+ping: dkron-server-0.dkron-server.default.svc.cluster.local: Name or service not known
+Waiting for LAN peer dkron-server-0.dkron-server.default.svc.cluster.local...
+10.0.4.96 peer
+10.0.1.112 pod
+10.0.3.128 peer
+10.0.1.112 pod
+10.0.1.112 peer
+10.0.1.112 pod
+LAN peers appear ready, 4 verifications left
+10.0.4.96 peer
+10.0.1.112 pod
+10.0.3.128 peer
+10.0.1.112 pod
+10.0.1.112 peer
+10.0.1.112 pod
+LAN peers appear ready, 3 verifications left
+10.0.4.96 peer
+10.0.1.112 pod
+10.0.3.128 peer
+10.0.1.112 pod
+10.0.1.112 peer
+10.0.1.112 pod
+LAN peers appear ready, 2 verifications left
+10.0.4.96 peer
+10.0.1.112 pod
+10.0.3.128 peer
+10.0.1.112 pod
+10.0.1.112 peer
+10.0.1.112 pod
+LAN peers appear ready, 1 verifications left
+10.0.4.96 peer
+10.0.1.112 pod
+10.0.3.128 peer
+10.0.1.112 pod
+10.0.1.112 peer
+10.0.1.112 pod
+LAN peers appear ready, 0 verifications left
+time="2021-03-01T19:23:59Z" level=info msg="agent: Dkron agent starting" node=dkron-server-2
+time="2021-03-01T19:23:59Z" level=info msg="agent: Retry join LAN is supported for: aliyun aws azure digitalocean gce k8s linode mdns os packet scaleway softlayer tencentcloud triton vsphere" node=dkron-server-2
+time="2021-03-01T19:23:59Z" level=info msg="agent: Joining cluster..." cluster=LAN node=dkron-server-2
+time="2021-03-01T19:23:59Z" level=info msg="agent: Join LAN completed. Synced with 2 initial agents" node=dkron-server-2
+time="2021-03-01T19:23:59Z" level=info msg="api: Running HTTP server" address=":8080" node=dkron-server-2
+time="2021-03-01T19:23:59Z" level=info msg="dkron: monitoring leadership" node=dkron-server-2
+time="2021-03-01T19:24:00Z" level=info msg="agent: Listen for events" node=dkron-server-2
+time="2021-03-01T19:24:00Z" level=info msg="agent: Received event" event=member-update node=dkron-server-2
+time="2021-03-01T19:24:00Z" level=info msg="agent: Received event" event=member-join node=dkron-server-2
+time="2021-03-01T19:24:00Z" level=warning msg="non-server in gossip pool" member=dkron-server-0 node=dkron-server-2
+time="2021-03-01T19:24:30Z" level=info msg="agent: Received event" event=member-update node=dkron-server-2
+time="2021-03-01T19:26:32Z" level=info msg="agent: Received event" event=member-update node=dkron-server-2
+time="2021-03-01T19:26:34Z" level=info msg="agent: Received event" event=member-update node=dkron-server-2

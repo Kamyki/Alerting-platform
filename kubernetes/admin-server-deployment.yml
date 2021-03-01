@@ -9,7 +9,7 @@ spec:
   type: LoadBalancer
   ports:
   - name: web
-    port: 80
+    port: 5000
   selector:
     app: admin-server
 ---
@@ -42,20 +42,20 @@ spec:
         - name: ALERTING_SECRET_PATH
           value: /secret/secret.yaml
         ports:
-        - containerPort: 80
+        - containerPort: 5000
           name: web
           protocol: TCP
         readinessProbe:
           httpGet:
             path: /health
-            port: 80
+            port: 5000
           periodSeconds: 30
           failureThreshold: 3
           initialDelaySeconds: 120 # Sometimes it takes a lot to rejoin node to a cluster. Pausing there in case we do rolling pod update.
         livenessProbe:
           httpGet:
             path: /health
-            port: 80
+            port: 5000
           periodSeconds: 30
           failureThreshold: 3
           initialDelaySeconds: 120

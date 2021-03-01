@@ -1,0 +1,62 @@
+time="2021-03-01T19:25:30Z" level=info msg="agent: Dkron agent starting" node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:25:30Z" level=info msg="agent: Retry join LAN is supported for: aliyun aws azure digitalocean gce k8s linode mdns os packet scaleway softlayer tencentcloud triton vsphere" node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:25:30Z" level=info msg="agent: Joining cluster..." cluster=LAN node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:25:30Z" level=info msg="2021/03/01 19:25:30 discover.go:178: [DEBUG] discover: Using provider \"k8s\""
+time="2021-03-01T19:25:30Z" level=info msg="2021/03/01 19:25:30 k8s_discover.go:150: [DEBUG] discover-k8s: ignoring pod \"dkron-server-0\", not ready state"
+time="2021-03-01T19:25:30Z" level=info msg="2021/03/01 19:25:30 k8s_discover.go:150: [DEBUG] discover-k8s: ignoring pod \"dkron-server-1\", not ready state"
+time="2021-03-01T19:25:30Z" level=info msg="2021/03/01 19:25:30 k8s_discover.go:150: [DEBUG] discover-k8s: ignoring pod \"dkron-server-2\", not ready state"
+time="2021-03-01T19:25:30Z" level=info msg="agent: Discovered LAN servers: " node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:25:30Z" level=warning msg="agent: Join LAN failed: no servers to join, retrying in 30s" node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:00Z" level=info msg="2021/03/01 19:26:00 discover.go:178: [DEBUG] discover: Using provider \"k8s\""
+time="2021-03-01T19:26:00Z" level=info msg="2021/03/01 19:26:00 k8s_discover.go:150: [DEBUG] discover-k8s: ignoring pod \"dkron-server-0\", not ready state"
+time="2021-03-01T19:26:00Z" level=info msg="2021/03/01 19:26:00 k8s_discover.go:150: [DEBUG] discover-k8s: ignoring pod \"dkron-server-1\", not ready state"
+time="2021-03-01T19:26:00Z" level=info msg="2021/03/01 19:26:00 k8s_discover.go:150: [DEBUG] discover-k8s: ignoring pod \"dkron-server-2\", not ready state"
+time="2021-03-01T19:26:00Z" level=info msg="agent: Discovered LAN servers: " node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:00Z" level=warning msg="agent: Join LAN failed: no servers to join, retrying in 30s" node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:30Z" level=info msg="2021/03/01 19:26:30 discover.go:178: [DEBUG] discover: Using provider \"k8s\""
+time="2021-03-01T19:26:30Z" level=info msg="agent: Discovered LAN servers: 10.0.4.96 10.0.3.128 10.0.1.112" node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:30Z" level=info msg="agent: Join LAN completed. Synced with 3 initial agents" node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:31Z" level=info msg="agent: Listen for events" node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:31Z" level=info msg="agent: Received event" event=member-join node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:31Z" level=warning msg="non-server in gossip pool" member=dkron-worker-6c57779ddd-m8hmd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:31Z" level=info msg="agent: Received event" event=member-update node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:31Z" level=info msg="agent: Received event" event=member-join node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:26:31Z" level=info msg="adding server" node=dkron-worker-6c57779ddd-m8hmd server=dkron-server-2
+time="2021-03-01T19:26:31Z" level=info msg="adding server" node=dkron-worker-6c57779ddd-m8hmd server=dkron-server-1
+time="2021-03-01T19:26:31Z" level=info msg="adding server" node=dkron-worker-6c57779ddd-m8hmd server=dkron-server-0
+time="2021-03-01T19:26:34Z" level=info msg="agent: Received event" event=member-update node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:29:17Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:29:37Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:29:47Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:29:57Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:30:17Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:30:37Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:30:37Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:30:47Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:31:07Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:31:07Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:31:27Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:31:57Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:31:57Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:32:07Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:32:07Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:32:17Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:32:17Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:07Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:17Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:27Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:27Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:37Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:37Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:47Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:47Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:57Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:33:57Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:34:17Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:34:17Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:34:27Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:34:37Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:34:47Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:34:57Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:35:27Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cd node=dkron-worker-6c57779ddd-m8hmd
+time="2021-03-01T19:35:27Z" level=info msg="grpc_agent: Starting job" job=603d407909c16f4ed17059cc node=dkron-worker-6c57779ddd-m8hmd

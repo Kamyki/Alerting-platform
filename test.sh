@@ -13,7 +13,7 @@ docker build -t alerting-platform/worker -f worker/Dockerfile ./worker
 docker run -p 8080:8080  --name dkron --rm -d alerting-platform/worker \
   agent --server --bootstrap-expect=1 --config /app/dkron.yml
 
-docker run -p 80:80 -p 27017:27017 --rm --name admin-server -d alerting-platform/admin-server
+docker run -p 5000:5000 --rm --name admin-server -d alerting-platform/admin-server
 
 echo "Docker is up"
 

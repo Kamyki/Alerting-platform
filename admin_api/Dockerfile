@@ -1,5 +1,7 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8-alpine
 
+#FROM tiangolo/uwsgi-nginx-flask:python3.8-alpine
+
+FROM python:3.8-alpine
 RUN apk --update add bash nano gcc
 
 RUN pip install --upgrade pip
@@ -11,3 +13,7 @@ RUN pip install -r /var/www/requirements.txt
 ENV ALERTING_SECRET_PATH=/app/secret.yaml
 
 COPY . /app
+
+ENTRYPOINT ["python3"]
+
+CMD ["/app/admin_incident_endpoints.py"]

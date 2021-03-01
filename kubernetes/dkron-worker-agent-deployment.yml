@@ -54,7 +54,6 @@ spec:
         - containerPort: 6868
           name: raft
           protocol: TCP
-      #serviceAccount: dkron
       terminationGracePeriodSeconds: 60 # Max wait time for jobs to be finished, then force kill the pod.
       volumes:
       - name: dkron-worker
