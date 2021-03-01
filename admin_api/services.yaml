@@ -7,7 +7,7 @@
 
 -       url: http://www.github.com:2137  # this one for tests purpose will be incident free
         first_admin: Kamil Mykitiuk
-        second_admin: Kamil Mykitiuk
+        second_admin: Mateusz Bieganski
         frequency: 10
         alerting_window: 3
         allowed_response_time: 1

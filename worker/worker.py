@@ -19,8 +19,7 @@ args = parser.parse_args()
 
 URL = args.url
 
-def check_alerting_window_exceeded(url):
-    service = get_service(url)
+def check_alerting_window_exceeded(service):
     last_ok = service['last_ok_visited_timestamp']
     alerting_window = service['alerting_window']
     now = datetime.datetime.now()
@@ -28,37 +27,37 @@ def check_alerting_window_exceeded(url):
     if last_ok is None:
         LOG(f"First check? Start counting from now!")
 
-        db[SERVICES_COLLECTION_NAME].update_one({"url": url}, {"$set": {"last_ok_visited_timestamp": now}})
+        db[SERVICES_COLLECTION_NAME].update_one({"url": URL}, {"$set": {"last_ok_visited_timestamp": now}})
     else:
         if datetime.timedelta(seconds=alerting_window) <= (now - last_ok):
-            report_incident(url)
+            report_incident(service)
         else:
             LOG(f"Seems fine: alerting window: {alerting_window}, now - last_ok: {now - last_ok}")
 
 
 
-def main_func(url):
+def main_func(service):
     success = False
     try:
-        requests.get(url, timeout=1)
+        requests.get(URL, timeout=1)
         # ok, request completed, finish healt check
         success = True
-        LOG(f"Service {url} healthy!")
+        LOG(f"Service {URL} healthy!")
     except (MissingSchema, InvalidSchema):
         success = True
         ERROR("Malformed URL! Please add 'http(s)://' prefix to passed --url!")
     except Exception:
         success = False
-        LOG(f"Service {url} unavailable! Checking if 'alerting_window' exceed...")
+        LOG(f"Service {URL} unavailable! Checking if 'alerting_window' exceed...")
 
     if not success:
-        check_alerting_window_exceeded(url)
+        check_alerting_window_exceeded(service)
 
 
-def schedule_reporter_job(url):
+def schedule_reporter_job(service):
     LOG("dummy Reporter Job scheduling..")
     api = Dkron([DKRON_ADDRESS])
-
+    alerting_window = service['alerting_window']
     api.apply_job({
         "schedule": f'@at {datetime.datetime.now() + datetime.timedelta(seconds=10)}',
         "name": str(service['_id']),
@@ -78,10 +77,10 @@ def schedule_reporter_job(url):
     pass
 
 
-def report_incident(url):
-    if get_incident(url) is None:
+def report_incident(service):
+    if get_incident(URL) is None:
         LOG("incident reporting: True (first time)")
-        put_incident(url)
+        put_incident(URL)
         first_admin_email = get_first_admin_email(service)
         token = get_incident_token_first_admin(URL)
         send_email(first_admin_email, token, URL)
@@ -94,9 +93,9 @@ def report_incident(url):
 
 
 if __name__ == '__main__':
-    service = get_service(URL)
     LOG(f"worker.py: checking service {URL}...")
+    service = get_service(URL)
     if service is None:
         ERROR(f"Unknown service! {URL} service not found in database")
 
-    main_func(URL)
+    main_func(service)
